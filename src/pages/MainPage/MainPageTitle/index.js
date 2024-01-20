@@ -1,12 +1,14 @@
 import React from "react";
+import Input from "../../../components/Input";
+import classes from "./MainPageTitle.module.scss"
 
-const MainPage = () => {
+const MainPageTitle = () => {
   console.log("MainPage is rendered!");
 
   return (
-    <div>
-      <div className="container">
-        <div className="title_block">
+    <div className={classes.main_page}>
+      <div className={classes.container}>
+        <div className={classes.title_block}>
           <h1>Crypto Price Tracker</h1>
           <p>
             <span>By </span>
@@ -18,10 +20,11 @@ const MainPage = () => {
               Tarasdd
             </a>
           </p>
+          <Input />
         </div>
       </div>
     </div>
   );
 };
 
-export default MainPage;
+export default MainPageTitle;
