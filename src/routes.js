@@ -1,4 +1,4 @@
-import MainPage from "./pages/MainPage/MainPageTitle/index.js";
+import MainPage from "./pages/MainPage/MainPage";
 
 export const publicRoutes = [
   {

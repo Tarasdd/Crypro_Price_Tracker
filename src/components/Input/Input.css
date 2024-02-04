@@ -24,6 +24,6 @@
 .input-field::placeholder {
   color: #e2e2e2;
   font-size: 18px;
-font-style: normal;
-font-weight: 300;
+  font-style: normal;
+  font-weight: 300;
 }

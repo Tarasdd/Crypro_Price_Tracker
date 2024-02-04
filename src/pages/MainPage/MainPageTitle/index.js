@@ -3,7 +3,6 @@ import Input from "../../../components/Input";
 import classes from "./MainPageTitle.module.scss"
 
 const MainPageTitle = () => {
-  console.log("MainPage is rendered!");
 
   return (
     <div className={classes.main_page}>
