@@ -1,5 +1,4 @@
 import React from "react";
-import Input from "../../../components/Input";
 import classes from "./MainPageTitle.module.scss"
 
 const MainPageTitle = () => {
@@ -19,7 +18,6 @@ const MainPageTitle = () => {
               Tarasdd
             </a>
           </p>
-          <Input />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 .table_container {
   width: 1400px;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 4rem;
 
   .table_block {
     display: flex;
@@ -46,6 +46,46 @@
   }
 }
 
+//INPUT STYLES
+.input_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6rem;
+  margin-top: 3rem;
+}
+
+.crypto_empty_results {
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.input_field {
+  position: relative;
+  padding-left: 16px;
+  width: 400px;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  background-image: linear-gradient(-225deg, rgb(106, 94, 209), rgb(59, 48, 156));
+  color: #ffffff;
+}
+
+.input_field:focus {
+  outline-color: #37396D;
+}
+
+.input_field::placeholder {
+  color: #e2e2e2;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+//LINE 
 .line {
   margin-top: -3px;
   height: 3px;
