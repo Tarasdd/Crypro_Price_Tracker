@@ -62,4 +62,36 @@
       }
     }
   }
+
+  .block:hover {
+    background-color: #282a61;
+
+    .coin {
+      background-color: #282a61;
+
+      div {
+        background-color: #282a61;
+
+        img {
+          background-color: #282a61;
+        }
+
+        p {
+          background-color: #282a61;
+        }
+      }
+
+      p {
+        background-color: #282a61;
+      }
+    }
+
+    .coin_info {
+      background-color: #282a61;
+
+      p {
+        background-color: #282a61;
+      }
+    }
+  }
 }

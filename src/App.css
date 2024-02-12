@@ -8,3 +8,7 @@
   color: #fff;
   font-family: 'Mukta', sans-serif;
 }
+
+a {
+  text-decoration: none;
+}

@@ -1,5 +1,5 @@
 // cryptoStore.js
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable } from "mobx";
 
 class CryptoStore {
   coins = [];
@@ -22,10 +22,7 @@ class CryptoStore {
 
   setCoins(coins) {
     this.coins = coins;
-    this.filteredCoins = coins;
   }
-
-
 }
 
 const cryptoStore = new CryptoStore();
