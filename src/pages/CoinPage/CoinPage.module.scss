@@ -1,0 +1,57 @@
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1600px;
+  display: flex;
+
+  .sisebar {
+    height: 100vh;
+    max-width: 400px;
+    padding-top: 20px;
+    border-right: 1px solid #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      margin-right: 3rem;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-right: 3rem;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-right: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .market_data {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .chartbar {
+    width: 100%;
+    padding: 50px;
+    margin-top: 2rem;
+    margin-left: 4rem;
+  }
+}

@@ -12,3 +12,8 @@
 a {
   text-decoration: none;
 }
+
+button {
+  all: initial;
+  font-family: 'Mukta', sans-serif;
+}

@@ -3,6 +3,24 @@ import { makeAutoObservable } from "mobx";
 
 class CryptoStore {
   coins = [];
+  chartDays = [
+    {
+      label: "24 Hours",
+      value: 1,
+    },
+    {
+      label: "30 Days",
+      value: 30,
+    },
+    {
+      label: "3 Months",
+      value: 90,
+    },
+    {
+      label: "1 Year",
+      value: 365,
+    },
+  ];
 
   constructor() {
     makeAutoObservable(this);
@@ -23,6 +41,10 @@ class CryptoStore {
 
   setCoins(coins) {
     this.coins = coins;
+  }
+
+  getChartDays() {
+    return this.chartDays;
   }
 }
 

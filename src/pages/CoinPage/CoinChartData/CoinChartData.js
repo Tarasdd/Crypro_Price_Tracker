@@ -2,11 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import classes from "./CoinChartData.module.scss";
 import axios from "axios";
 import Chart from "chart.js/auto";
+import cryptoStore from "../../../store/cryproStore";
+import { observer } from "mobx-react-lite";
 
-const CoinChartData = ({ coin }) => {
+const CoinChartData = observer(({ coin }) => {
   const [chartData, setChartData] = useState();
-  const [days, setDays] = useState(7); // Default 7 days
+  const [days, setDays] = useState(1);
   const chartRef = useRef(null);
+  let chartInstance = null;
 
   useEffect(() => {
     const fetchChartData = async () => {
@@ -24,30 +27,69 @@ const CoinChartData = ({ coin }) => {
   }, [days]);
 
   useEffect(() => {
-    // Create the chart after the data is fetched
     if (chartData && chartRef.current) {
       const ctx = chartRef.current.getContext("2d");
-      new Chart(ctx, {
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+      chartInstance = new Chart(ctx, {
         type: "line",
         data: {
-          labels: chartData.map((entry) => entry[0]), // Assuming each entry is an array with [timestamp, value]
+          labels: chartData.map((entry) => {
+            const date = new Date(entry[0]);
+            const time =
+              date.getHours() > 12
+                ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+                : `${date.getHours()}:${date.getMinutes()} AM`;
+            return days === 1 ? time : date.toLocaleDateString();
+          }),
           datasets: [
             {
-              label: "Price",
-              data: chartData.map((entry) => entry[1]), // Assuming each entry is an array with [timestamp, value]
+              label: `Price (Past ${days} Days) in USD`,
+              data: chartData.map((entry) => entry[1]),
               borderColor: "#EEBC1D",
             },
           ],
         },
+        options: {
+          elements: {
+            point: {
+              radius: 1,
+            },
+          },
+        },
       });
+  
+      const handleResize = () => {
+        if (chartInstance) {
+          chartInstance.resize();
+        }
+      };
+  
+      window.addEventListener("resize", handleResize);
+  
+      return () => {
+        window.removeEventListener("resize", handleResize);
+        if (chartInstance) {
+          chartInstance.destroy();
+        }
+      };
     }
-  }, [chartData]);
+  }, [chartData, chartRef, days]);
 
   return (
-    <div className={classes.container}>
+    <>
       <canvas ref={chartRef} />
-    </div>
+      {/* Buttons */}
+      <div className={classes.button}>
+        {cryptoStore.chartDays.map((day) => (
+          <button key={day.value} onClick={() => setDays(day.value)}>
+            {day.label}
+          </button>
+        ))}
+      </div>
+    </>
   );
-};
+});
 
 export default CoinChartData;
