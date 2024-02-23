@@ -59,15 +59,15 @@ const CoinChartData = observer(({ coin }) => {
           },
         },
       });
-  
+
       const handleResize = () => {
         if (chartInstance) {
           chartInstance.resize();
         }
       };
-  
+
       window.addEventListener("resize", handleResize);
-  
+
       return () => {
         window.removeEventListener("resize", handleResize);
         if (chartInstance) {
@@ -83,7 +83,11 @@ const CoinChartData = observer(({ coin }) => {
       {/* Buttons */}
       <div className={classes.button}>
         {cryptoStore.chartDays.map((day) => (
-          <button key={day.value} onClick={() => setDays(day.value)}>
+          <button
+            key={day.value}
+            className={days === day.value ? classes.selected : ""}
+            onClick={() => setDays(day.value)}
+          >
             {day.label}
           </button>
         ))}
