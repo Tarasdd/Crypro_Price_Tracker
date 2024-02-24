@@ -1,7 +1,7 @@
 TECH STACK:
-react js
-mobx
-chart js
+react js,
+mobx,
+chart js,
 scss module.
 
 # Getting Started with Create React App
