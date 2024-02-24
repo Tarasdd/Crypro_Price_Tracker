@@ -1,3 +1,9 @@
+TECH STACK:
+react js
+mobx
+chart js
+scss module.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
